@@ -12,7 +12,11 @@ class DestinationDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(destination.name, maxLines: 1, overflow: TextOverflow.ellipsis),
+        title: Text(
+          destination.name,
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+        ),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.fromLTRB(20, 8, 20, 28),
@@ -39,38 +43,23 @@ class DestinationDetailPage extends StatelessWidget {
               "${destination.location}  ·  ${destination.category}",
               style: const TextStyle(color: Color(0xFF8A6877), fontSize: 15),
             ),
-            const SizedBox(height: 18),
-            // Row(
-            //   children: [
-            //     ...List.generate(5, (index) {
-            //       final starValue = index + 1;
-            //       final icon = destination.g>= starValue
-            //           ? Icons.star_rounded
-            //           : destination.rating >= starValue - 0.5
-            //           ? Icons.star_half_rounded
-            //           : Icons.star_border_rounded;
-            //       return Icon(icon, color: const Color(0xFFFFB300), size: 22);
-            //     }),
-            //     const SizedBox(width: 8),
-            //     Text(
-            //       destination.rating.toStringAsFixed(1),
-            //       style: const TextStyle(
-            //         color: Color(0xFF54263A),
-            //         fontWeight: FontWeight.w700,
-            //       ),
-            //     ),
-            //   ],
-            // ),
+
             const SizedBox(height: 20),
             const Divider(color: Color(0xFFE8CBD6)),
             const SizedBox(height: 12),
-            _DestinationInfoRow(label: "Nama Destinasi", value: destination.name),
-            _DestinationInfoRow(label: "Kategori Destinasi", value: destination.category),
+            _DestinationInfoRow(
+              label: "Nama Destinasi",
+              value: destination.name,
+            ),
+            _DestinationInfoRow(
+              label: "Kategori Destinasi",
+              value: destination.category,
+            ),
             _DestinationInfoRow(label: "Lokasi", value: destination.location),
-            // _DestinationInfoRow(
-            //   // label: "Jumlah kunjungan",
-            //   // value: "${destination.visitCount} kali",
-            // ),
+            const SizedBox(height: 20),
+            const Divider(color: Color(0xFFE8CBD6)),
+            const SizedBox(height: 12),
+
             const SizedBox(height: 16),
             const Text(
               "Detail Destinasi",
@@ -113,8 +102,7 @@ class DestinationDetailPage extends StatelessWidget {
   }
 }
 
-class _DestinationInfoRow 
-extends StatelessWidget {
+class _DestinationInfoRow extends StatelessWidget {
   final String label;
   final String value;
 
